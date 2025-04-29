@@ -33,9 +33,4 @@ module.exports = merge(commonConfig, {
 			},
 		],
 	},
-	resolve: {
-		alias: {
-			'@': path.resolve(__dirname, 'src'),
-		},
-	},
 });
