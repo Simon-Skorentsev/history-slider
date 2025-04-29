@@ -4,7 +4,7 @@
 
 ## Ссылка на live version
 
-- будет
+- https://history-slider.vercel.app/
 
 ## Технологии
 
@@ -20,7 +20,7 @@
 1. Скачайте zip или клонируйте репозиторий:
 
    ```sh
-   будет
+   git clone https://github.com/Simon-Skorentsev/history-slider.git
    ```
 
 2. Установите зависимости:
