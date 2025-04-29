@@ -1,0 +1,15 @@
+@use '@/config/mixins' as *;
+@use '@/config/functions' as *;
+
+.year {
+	font-family: PT Sans;
+	font-size: rem-calc(200px);
+	font-weight: 700;
+	line-height: rem-calc(160px);
+	letter-spacing: -0.02em;
+
+	@include mobile {
+		font-size: rem-calc(56px);
+		line-height: rem-calc(72px);
+	}
+}

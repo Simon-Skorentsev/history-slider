@@ -1,0 +1,79 @@
+@use '@/config/vars' as *;
+@use '@/config/mixins' as *;
+@use '@/config/functions' as *;
+
+@mixin roundNode {
+	&:before {
+		width: rem-calc(50px);
+		height: rem-calc(50px);
+		background: $bg-primary;
+	}
+
+	.text {
+		opacity: 1;
+	}
+
+	.title {
+		scale: 1;
+	}
+}
+
+.carouselItem {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	height: 0;
+	width: 0;
+
+	@include mobile {
+	}
+
+	&:before {
+		content: '';
+		width: rem-calc(6px);
+		height: rem-calc(6px);
+		position: absolute;
+		background-color: $text-primary;
+		border-radius: 50%;
+		border: 1px solid rgba(48, 62, 88, 0.5);
+		transition: all 0.4s;
+		cursor: pointer;
+	}
+
+	&:hover {
+		@include roundNode();
+
+		cursor: initial;
+	}
+
+	.text {
+		opacity: 0;
+		transition: all 0.4s;
+		z-index: 1;
+		cursor: pointer;
+
+		color: $text-primary;
+		font-family: PT Sans;
+		font-size: rem-calc(20px);
+		font-weight: 400;
+		line-height: rem-calc(30px);
+	}
+
+	.title {
+		position: absolute;
+		left: rem-calc(40px);
+		opacity: 0;
+		scale: 0;
+
+		color: $text-primary;
+		font-family: PT Sans;
+		font-size: rem-calc(20px);
+		font-weight: 700;
+		line-height: rem-calc(30px);
+	}
+
+	&--active {
+		@include roundNode();
+	}
+}

@@ -1,0 +1,23 @@
+@use '@/config/vars' as *;
+@use '@/config/mixins' as *;
+@use '@/config/functions' as *;
+
+.layout {
+	position: relative;
+	max-width: rem-calc(1440px);
+	min-height: 100vh;
+	padding-top: rem-calc($layout-padding-top);
+	padding-inline: rem-calc($layout-padding-inline-desktop);
+	margin-inline: auto;
+	border-inline: $border-line;
+
+	@supports (min-height: 100dvh) {
+		min-height: 100dvh;
+	}
+
+	@include mobile {
+		padding-top: rem-calc($layout-padding-top);
+		padding-inline: rem-calc($layout-padding-inline-mobile);
+		border-inline: initial;
+	}
+}

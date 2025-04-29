@@ -1,0 +1,19 @@
+@mixin mobile() {
+	@media print, screen and (width <= 1000px) {
+		@content;
+	}
+}
+
+@mixin hover-mobile-adaptive() {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			@content;
+		}
+	}
+}

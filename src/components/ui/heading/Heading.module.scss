@@ -1,0 +1,34 @@
+@use '@/config/vars' as *;
+@use '@/config/mixins' as *;
+@use '@/config/functions' as *;
+
+.title {
+	position: relative;
+	left: calc(#{rem-calc(-$layout-padding-inline-desktop)} - #{rem-calc($border-width)});
+	padding-left: calc(#{rem-calc(78px)} + $border-width);
+	background-image: linear-gradient($text-secondary -5%, $text-accent 85%);
+	background-repeat: no-repeat;
+	background-position: left 0;
+	background-size: rem-calc(5px) 89.66%;
+	background-position-y: 50%;
+
+	color: $text-primary;
+	font-family: PT Sans;
+	font-size: rem-calc(56px);
+	font-weight: 700;
+	line-height: 120%;
+	white-space: pre-line;
+
+	@include mobile {
+		font-size: rem-calc(20px);
+
+		position: initial;
+		left: initial;
+		padding-left: initial;
+		background-image: initial;
+		background-repeat: initial;
+		background-position: initial;
+		background-size: initial;
+		background-position-y: initial;
+	}
+}

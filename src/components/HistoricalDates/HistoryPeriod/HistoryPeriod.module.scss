@@ -1,0 +1,59 @@
+@use '@/config/vars' as *;
+@use '@/config/mixins' as *;
+@use '@/config/functions' as *;
+
+.historyPeriod {
+	display: flex;
+	justify-content: center;
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		height: 1px;
+		width: calc(100% + #{rem-calc($layout-padding-inline-desktop)} * 2);
+		left: rem-calc(-$layout-padding-inline-desktop);
+		top: 50%;
+		border-bottom: $border-line;
+
+		@include mobile {
+			content: initial;
+			position: initial;
+			height: initial;
+			width: initial;
+			left: initial;
+			top: initial;
+			border-bottom: initial;
+		}
+	}
+
+	.period {
+		display: flex;
+		position: absolute;
+		justify-content: space-around;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+		max-width: rem-calc(1090px);
+
+		@include mobile {
+			position: initial;
+		}
+
+		.from {
+			color: #5d5fef;
+
+			@include mobile {
+				color: $text-secondary;
+			}
+		}
+
+		.to {
+			color: $text-accent;
+
+			@include mobile {
+				color: #f178b6;
+			}
+		}
+	}
+}

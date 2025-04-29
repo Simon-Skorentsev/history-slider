@@ -1,0 +1,49 @@
+@use '@/config/vars' as *;
+@use '@/config/mixins' as *;
+@use '@/config/functions' as *;
+
+.historicalDates {
+	&::before {
+		content: '';
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		border-right: $border-line;
+
+		@include mobile {
+			content: initial;
+			height: initial;
+			position: initial;
+			top: initial;
+			left: initial;
+			border-right: initial;
+		}
+	}
+
+	.heading {
+		margin-bottom: rem-calc(-90px);
+
+		@include mobile {
+			margin-bottom: rem-calc(56px);
+		}
+	}
+
+	.historyPeriod {
+		margin-bottom: rem-calc(-48px);
+
+		@include mobile {
+			margin-bottom: rem-calc(15px);
+		}
+	}
+
+	.carouselControls {
+		margin-bottom: rem-calc(56px);
+
+		@include mobile {
+			position: absolute;
+			bottom: rem-calc(14px);
+			margin-bottom: initial;
+		}
+	}
+}
