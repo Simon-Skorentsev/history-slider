@@ -53,7 +53,7 @@ export const CircularCarousel = ({ slides, direction = 'clockwise' }: Props) => 
 				top: `${top / 16}rem`,
 			});
 		});
-	}, [slides.length, angle]);
+	}, [slides, angle]);
 
 	// Эффект для анимации вращения
 	useEffect(() => {
@@ -93,7 +93,7 @@ export const CircularCarousel = ({ slides, direction = 'clockwise' }: Props) => 
 		return () => {
 			tl.kill();
 		};
-	}, [activeSlide, slides.length, angle]);
+	}, [activeSlide, slides]);
 
 	// Эффект для анимации заголовков
 	useEffect(() => {
@@ -140,11 +140,13 @@ export const CircularCarousel = ({ slides, direction = 'clockwise' }: Props) => 
 		return () => {
 			tl.kill();
 		};
-	}, [activeSlide]);
+	}, [activeSlide, slides, angle]);
 
 	const changeActiveSlide = (index: number) => {
 		oldActiveIndex.current = activeSlide;
-		setActiveSlide && setActiveSlide(index);
+		if (setActiveSlide) {
+			setActiveSlide(index);
+		}
 	};
 
 	return (

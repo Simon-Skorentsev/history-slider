@@ -2,7 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
@@ -44,12 +44,19 @@ module.exports = {
 	optimization: {
 		minimize: true,
 		minimizer: [
-			new OptimizeCssAssetsPlugin({
-				cssProcessorOptions: {
-					map: {
-						inline: false,
-						annotation: true,
-					},
+			new CssMinimizerPlugin({
+				minimizerOptions: {
+					preset: [
+						'default',
+						{
+							cssProcessorOptions: {
+								map: {
+									inline: false,
+									annotation: true,
+								},
+							},
+						},
+					],
 				},
 			}),
 			new TerserPlugin({

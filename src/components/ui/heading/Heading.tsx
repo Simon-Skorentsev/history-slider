@@ -1,5 +1,5 @@
 import cn from 'clsx';
-import type { PropsWithChildren, ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import styles from './Heading.module.scss';
 

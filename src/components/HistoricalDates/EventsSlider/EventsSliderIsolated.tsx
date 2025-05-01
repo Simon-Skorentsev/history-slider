@@ -1,5 +1,4 @@
 import { useActiveSlideContext } from '@/hooks/useActiveSlideContext';
-import { useSetterActiveSlideContext } from '@/hooks/useSetterActiveSlideContext';
 
 import { Slide } from '../type';
 
