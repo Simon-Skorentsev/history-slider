@@ -74,9 +74,8 @@ export function EventsSlider({ events, activeSlide, title, className }: Props) {
 				onComplete: () => {
 					setOldEvents(events);
 					setOldTitle(title);
-					if (activeSlide && controlledSwiper.current) {
-						controlledSwiper.current.slideTo(0, 0);
-					}
+					controlledSwiper.current?.slideTo(0, 0);
+					controlledSwiper.current?.navigation.update();
 				},
 			});
 
