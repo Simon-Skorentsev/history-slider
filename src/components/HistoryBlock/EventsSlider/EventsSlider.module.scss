@@ -1,0 +1,130 @@
+.eventsSlider {
+	position: relative;
+
+	@include mobile {
+		display: flex;
+		flex-direction: column;
+		gap: rem-calc(19px);
+	}
+
+	.title {
+		padding-bottom: rem-calc(18px);
+
+		color: $text-primary;
+		font-weight: 700;
+		font-size: rem-calc(20px);
+		line-height: 120%;
+
+		border-bottom: 1px solid #c7cdd9;
+	}
+
+	.swiper {
+		width: 100%;
+		height: 100%;
+
+		@include mobile {
+			width: calc(100% + #{rem-calc($layout-padding-inline-mobile)});
+		}
+
+		.slide {
+			display: flex;
+			flex-direction: column;
+			gap: rem-calc(13px);
+
+			@include mobile {
+				gap: rem-calc(15px);
+			}
+
+			.date {
+				color: $text-secondary;
+				font-weight: 400;
+				font-size: rem-calc(25px);
+				font-family: 'Bebas Neue', 'PT Sans', Arial, Helvetica, sans-serif;
+				line-height: 120%;
+
+				@include mobile {
+					font-size: rem-calc(16px);
+				}
+			}
+
+			.text {
+				--line-height: #{rem-calc(30px)};
+				--line-clamp: 4;
+
+				display: -webkit-box;
+
+				height: calc(var(--line-height) * var(--line-clamp));
+				overflow: hidden;
+
+				color: $text-primary;
+				font-weight: 400;
+				font-size: rem-calc(20px);
+				line-height: var(--line-height);
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: var(--line-clamp);
+				line-clamp: var(--line-clamp);
+
+				text-wrap: pretty;
+
+				@include mobile {
+					--line-height: #{rem-calc(20px)};
+					--line-clamp: 6;
+
+					font-size: rem-calc(14px);
+				}
+			}
+		}
+	}
+
+	.buttons {
+		position: absolute;
+		top: rem-calc(42px);
+		z-index: 1;
+
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		pointer-events: none;
+
+		.button {
+			position: relative;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: rem-calc(40px);
+			height: rem-calc(40px);
+
+			background-color: $bg-accent;
+			border: none;
+			border-radius: 50%;
+			box-shadow: rem-calc(0 0 15px 0) rgb(56 119 238 / 10%);
+			cursor: pointer;
+
+			transition: all 0.2s;
+
+			pointer-events: all;
+
+			.arrow {
+				width: rem-calc(12px);
+				height: rem-calc(12px);
+
+				background: url('@/../public/icons/swiper-arrow.svg') no-repeat center/contain;
+			}
+
+			&--prev {
+				left: rem-calc(-42px);
+				rotate: 180deg;
+			}
+
+			&--next {
+				right: rem-calc(-42px);
+			}
+
+			&--hide {
+				opacity: 0;
+			}
+		}
+	}
+}

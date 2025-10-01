@@ -1,0 +1,51 @@
+.historyBlock {
+	@include mobile {
+		position: relative;
+	}
+
+	&::before {
+		@include desktop {
+			position: absolute;
+			top: 0;
+			left: 50%;
+
+			height: 100%;
+
+			border-right: $border-line;
+
+			content: '';
+		}
+	}
+
+	.title {
+		margin-bottom: rem-calc(-86px);
+
+		@include mobile {
+			margin-bottom: rem-calc(56px);
+		}
+	}
+
+	.historySlider {
+		margin-bottom: rem-calc(-49px);
+
+		@include mobile {
+			margin-bottom: rem-calc(15px);
+		}
+
+		&--no-controls {
+			margin-bottom: rem-calc(15px);
+		}
+	}
+
+	.sliderControls {
+		@include desktop {
+			margin-bottom: rem-calc(57px);
+		}
+	}
+
+	.eventsSlider {
+		@include mobile {
+			margin-bottom: rem-calc(78px);
+		}
+	}
+}

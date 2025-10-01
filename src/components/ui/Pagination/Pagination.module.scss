@@ -1,0 +1,19 @@
+.pagination {
+	display: flex;
+	gap: rem-calc(10px);
+
+	.dot {
+		width: rem-calc(6px);
+		height: rem-calc(6px);
+
+		background-color: rgba($bg-secondary, 0.4);
+		border-radius: 50%;
+		cursor: pointer;
+
+		transition: all 0.4s;
+
+		&--active {
+			background-color: $text-primary;
+		}
+	}
+}

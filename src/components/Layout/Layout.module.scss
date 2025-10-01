@@ -1,0 +1,22 @@
+.layout {
+	position: relative;
+
+	max-width: rem-calc(1440px);
+	min-height: 100vh;
+	padding-top: rem-calc(86px);
+	padding-inline: rem-calc($layout-padding-inline-desktop);
+	margin-inline: auto;
+
+	@supports (min-height: 100dvh) {
+		min-height: 100dvh;
+	}
+
+	@include desktop {
+		border-inline: $border-line;
+	}
+
+	@include mobile {
+		padding-top: rem-calc(59px);
+		padding-inline: rem-calc($layout-padding-inline-mobile);
+	}
+}

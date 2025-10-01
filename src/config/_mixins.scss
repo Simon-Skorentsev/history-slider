@@ -1,0 +1,25 @@
+@mixin mobile() {
+	@media (width <= 62.4988em) {
+		@content;
+	}
+}
+
+@mixin desktop() {
+	@media (width >= 62.5em) {
+		@content;
+	}
+}
+
+@mixin hover-mobile-adaptive() {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			@content;
+		}
+	}
+}

@@ -1,0 +1,79 @@
+@mixin round-node {
+	&::before {
+		width: rem-calc(50px);
+		height: rem-calc(50px);
+
+		background: $bg-primary;
+	}
+
+	.text {
+		opacity: 1;
+	}
+
+	.title {
+		scale: 1;
+	}
+}
+
+.carouselItem {
+	position: absolute;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 0;
+	height: 0;
+
+	&::before {
+		position: absolute;
+
+		width: rem-calc(6px);
+		height: rem-calc(6px);
+
+		background-color: $text-primary;
+		border: 1px solid rgb(48 62 88 / 50%);
+		border-radius: 50%;
+		cursor: pointer;
+
+		transition: all 0.4s;
+
+		content: '';
+	}
+
+	&:hover {
+		@include round-node;
+
+		cursor: initial;
+	}
+
+	.text {
+		z-index: 1;
+
+		color: $text-primary;
+		font-weight: 400;
+		font-size: rem-calc(20px);
+		line-height: rem-calc(30px);
+
+		cursor: pointer;
+		opacity: 0;
+
+		transition: all 0.4s;
+	}
+
+	.title {
+		position: absolute;
+		left: rem-calc(40px);
+
+		color: $text-primary;
+		font-weight: 700;
+		font-size: rem-calc(20px);
+		line-height: rem-calc(30px);
+
+		opacity: 0;
+		scale: 0;
+	}
+
+	&--active {
+		@include round-node;
+	}
+}

@@ -1,0 +1,26 @@
+$text-y-padding: 3px;
+
+.title {
+	color: $text-primary;
+	font-weight: 700;
+	font-size: rem-calc(56px);
+	line-height: 120%;
+	white-space: pre-line;
+
+	@include desktop {
+		position: relative;
+		left: calc(#{rem-calc(-$layout-padding-inline-desktop)} - #{rem-calc($border-width)});
+
+		padding-left: calc(#{rem-calc(80px)} + $border-width);
+
+		background-image: linear-gradient($text-secondary -5%, $text-accent 85%);
+		background-repeat: no-repeat;
+		background-position: left 0;
+		background-position-y: calc(50% + #{rem-calc($text-y-padding)});
+		background-size: rem-calc(5px) 89.66%;
+	}
+
+	@include mobile {
+		font-size: rem-calc(20px);
+	}
+}

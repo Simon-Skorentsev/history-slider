@@ -1,0 +1,11 @@
+.year {
+	font-weight: 700;
+	font-size: rem-calc(200px);
+	line-height: rem-calc(160px);
+	letter-spacing: -0.02em;
+
+	@include mobile {
+		font-size: rem-calc(56px);
+		line-height: rem-calc(72px);
+	}
+}

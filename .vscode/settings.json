@@ -1,0 +1,17 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": false,
+
+	"scss.validate": false,
+	"css.validate": false,
+	"less.validate": false,
+	"stylelint.validate": ["css", "scss"],
+
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.stylelint": "explicit"
+	},
+	"workbench.tree.indent": 20,
+	"files.autoSaveDelay": 500,
+	"cSpell.words": ["apartament", "cкидка", "Erid", "Faсets", "MEASURMENT", "ofetch", "panzoom", "pinia", "uuidv"]
+}

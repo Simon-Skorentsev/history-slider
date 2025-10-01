@@ -1,0 +1,47 @@
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: rem-calc(50px);
+	height: rem-calc(50px);
+
+	background-color: $bg-primary;
+	border: 1px solid rgba($text-primary, 0.5);
+	border-radius: 50%;
+	cursor: pointer;
+
+	transition: all, 0.4s;
+
+	@include mobile {
+		width: rem-calc(25px);
+		height: rem-calc(25px);
+	}
+
+	@include hover-mobile-adaptive {
+		background-color: $bg-accent;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+
+	.arrow {
+		width: rem-calc(10px);
+		height: rem-calc(14px);
+		margin-left: rem-calc(-2px);
+
+		background: url('@/../public/icons/carousel-control-arrow.svg') no-repeat center/contain;
+
+		@include mobile {
+			width: rem-calc(8px);
+			height: rem-calc(8px);
+
+			background: url('@/../public/icons/carousel-control-arrow-mobile.svg') no-repeat center/contain;
+		}
+	}
+
+	&--right {
+		transform: rotate(180deg);
+	}
+}

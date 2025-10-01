@@ -1,0 +1,40 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	.controls {
+		display: flex;
+		flex-direction: column;
+		gap: rem-calc(21px);
+
+		@include mobile {
+			gap: rem-calc(7px);
+		}
+
+		.text {
+			color: $text-primary;
+			font-weight: 400;
+			font-size: rem-calc(14px);
+			line-height: rem-calc(18px);
+		}
+
+		.buttons {
+			display: flex;
+			gap: rem-calc(20px);
+
+			@include mobile {
+				gap: rem-calc(8.33px);
+			}
+		}
+	}
+
+	.paginationWrapper {
+		position: absolute;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+}

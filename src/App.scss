@@ -1,0 +1,36 @@
+html {
+	font-size: 4.2666666667vw;
+}
+
+body {
+	color: $text-primary;
+	font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+
+	background: $bg-primary;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@media (width >= 62.5em) and (width <= 98.5em) {
+	html {
+		font-size: 1.0152284264vw;
+	}
+}
+
+@media (width >= 98.5em) {
+	html {
+		font-size: $global-font-size;
+	}
+}
+
+.show-for-desktop-only {
+	@media (width <= 62.4988em) {
+		display: none !important;
+	}
+}
+
+.show-for-mobile-only {
+	@media (width >= 62.5em) {
+		display: none !important;
+	}
+}

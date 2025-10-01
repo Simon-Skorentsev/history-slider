@@ -1,0 +1,58 @@
+.historySlider {
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+
+	&::before {
+		@include desktop {
+			position: absolute;
+			top: 50%;
+			left: rem-calc(-$layout-padding-inline-desktop);
+
+			width: calc(100% + #{rem-calc($layout-padding-inline-desktop)} * 2);
+			height: 1px;
+
+			border-top: $border-line;
+
+			content: '';
+		}
+	}
+
+	.period {
+		display: flex;
+		align-items: center;
+		height: 100%;
+
+		@include desktop {
+			position: absolute;
+			bottom: rem-calc(12px);
+
+			gap: rem-calc(94px);
+
+			// По макету сдвинуто от центра влево и вверх, будь возможность уточнил бы у дизайнера задумано ли так
+			margin-left: rem-calc(-36px);
+		}
+
+		@include mobile {
+			justify-content: space-around;
+			width: 100%;
+		}
+
+		.from {
+			color: #5d5fef;
+
+			@include mobile {
+				color: $text-secondary;
+			}
+		}
+
+		.to {
+			color: $text-accent;
+
+			@include mobile {
+				color: #f178b6;
+			}
+		}
+	}
+}
