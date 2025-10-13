@@ -7,10 +7,6 @@
 	padding-inline: rem-calc($layout-padding-inline-desktop);
 	margin-inline: auto;
 
-	@supports (min-height: 100dvh) {
-		min-height: 100dvh;
-	}
-
 	@include desktop {
 		border-inline: $border-line;
 	}

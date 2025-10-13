@@ -6,7 +6,7 @@ export const animationConstants = {
 	eventsSlider: {
 		fadeDur: 0.2,
 	},
-	dateCounter: {
+	dynamicNumber: {
 		countDur: 0.5,
 	},
 };

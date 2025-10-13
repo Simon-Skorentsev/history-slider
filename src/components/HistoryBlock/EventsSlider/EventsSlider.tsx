@@ -28,7 +28,7 @@ export function EventsSlider({ events, activeSlide, title, className }: Props) {
 	const {
 		eventsSlider: { fadeDur },
 		historyCarousel: { rotateDur },
-		dateCounter: { countDur },
+		dynamicNumber: { countDur },
 	} = animationConstants;
 
 	const [oldEvents, setOldEvents] = useState(events);
@@ -137,6 +137,7 @@ export function EventsSlider({ events, activeSlide, title, className }: Props) {
 				))}
 				{events.length > 1 && (
 					<SliderOpacityOverlay
+						className='show-for-mobile-only'
 						progress={progress}
 						slidesNumber={events.length}
 					/>

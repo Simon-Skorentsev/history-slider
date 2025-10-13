@@ -5,9 +5,10 @@ import styles from './SliderOpacityOverlay.module.scss';
 interface Props {
 	slidesNumber: number;
 	progress: number;
+	className?: string;
 }
 
-export function SliderOpacityOverlay({ slidesNumber, progress }: Props) {
+export function SliderOpacityOverlay({ slidesNumber, progress, className }: Props) {
 	const getOpacity = () => {
 		if (slidesNumber < 3) {
 			return 1 - progress > 0.2 ? 1 - progress : 0;
@@ -20,9 +21,10 @@ export function SliderOpacityOverlay({ slidesNumber, progress }: Props) {
 
 		return 1;
 	};
+
 	return (
 		<div
-			className={cn(styles.opacityOverlay, 'show-for-mobile-only')}
+			className={cn(styles.opacityOverlay, className)}
 			style={{
 				opacity: getOpacity(),
 			}}

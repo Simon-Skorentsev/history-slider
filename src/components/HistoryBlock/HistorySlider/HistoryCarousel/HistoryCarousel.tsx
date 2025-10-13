@@ -16,13 +16,12 @@ interface Props {
 	slides: Slide[];
 	activeSlide: number;
 	setActiveSlide: React.Dispatch<React.SetStateAction<number>>;
-	direction?: 'counterclockwise' | 'clockwise';
 }
 
-export const HistoryCarousel = ({ slides, activeSlide, setActiveSlide, direction = 'clockwise' }: Props) => {
+export const HistoryCarousel = ({ slides, activeSlide, setActiveSlide }: Props) => {
 	const radius = 265;
 	const angle = 360 / slides.length;
-	const rotationDirectionCoefficient = direction === 'counterclockwise' ? 1 : -1;
+	const directionCoefficient = -1;
 	const {
 		historyCarousel: { rotateDur, titleDur },
 	} = animationConstants;
@@ -60,7 +59,7 @@ export const HistoryCarousel = ({ slides, activeSlide, setActiveSlide, direction
 
 			// Вращение карусели
 			tl.to(historyCarouselRef.current, {
-				rotation: angle * activeSlide * rotationDirectionCoefficient,
+				rotation: angle * activeSlide * directionCoefficient,
 				duration: rotateDur,
 				ease: 'power2.inOut',
 			});
@@ -76,7 +75,7 @@ export const HistoryCarousel = ({ slides, activeSlide, setActiveSlide, direction
 				tl.to(
 					carouselItem.itemElement,
 					{
-						rotation: angle * activeSlide * -rotationDirectionCoefficient,
+						rotation: angle * activeSlide * -directionCoefficient,
 						duration: rotateDur,
 						ease: 'power2.inOut',
 					},

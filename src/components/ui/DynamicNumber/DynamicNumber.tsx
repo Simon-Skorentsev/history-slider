@@ -13,7 +13,7 @@ interface Props {
 
 export const DynamicNumber = ({ number, className }: Props) => {
 	const {
-		dateCounter: { countDur },
+		dynamicNumber: { countDur },
 	} = animationConstants;
 
 	const counterRef = useRef<HTMLSpanElement>(null);
