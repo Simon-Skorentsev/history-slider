@@ -1,22 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
 export function useIsMobile() {
-	const [isMobile, setIsMobile] = useState(false);
+	const isMobileQuery = '(max-width: 62.4988em)';
 
-	const getIsMobile = () => {
-		return window.matchMedia(`(max-width: 62.4988em)`).matches;
+	const subscribe = (callback: VoidFunction) => {
+		const mediaQueryList = window.matchMedia(isMobileQuery);
+		mediaQueryList.addEventListener('change', callback);
+
+		return () => {
+			mediaQueryList.removeEventListener('change', callback);
+		};
 	};
 
-	useEffect(() => {
-		const handleResize = () => {
-			setIsMobile(getIsMobile());
-		};
-		handleResize();
+	const getSnapshot = () => {
+		return window.matchMedia(isMobileQuery).matches;
+	};
 
-		window.addEventListener('resize', handleResize);
-
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
-
-	return isMobile;
+	return useSyncExternalStore(subscribe, getSnapshot);
 }

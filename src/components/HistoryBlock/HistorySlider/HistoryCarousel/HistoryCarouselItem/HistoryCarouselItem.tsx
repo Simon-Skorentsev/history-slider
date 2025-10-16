@@ -7,7 +7,7 @@ interface Props {
 	text: string;
 	title: string;
 	isActive: boolean;
-	onClick?: () => void;
+	onClick?: VoidFunction;
 }
 
 export interface HistoryCarouselItemRefs {
